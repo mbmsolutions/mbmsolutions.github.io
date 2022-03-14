@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="Description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css" /> -->
+        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" /> -->
+        <style>
+            :root {
+                --theme-color: #043752;
+            }
+            .d-flex {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+            }
+            .d-flex span,
+            .d-flex img {
+                margin-right: 20px;
+            }
+            .d-flex img {
+                height: 60px;
+                object-fit: cover;
+                width: 120px;
+            }
+
+            .token.keyword {
+                color: #393766;
+                /* font-weight: bold; */
+                /* font-family: Arial, Helvetica, sans-serif; */
+            }
+            .token.string {
+                color: #42b983;
+            }
+            .token.builtin {
+                color: #e96900;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            window.$docsify = {
+                count: {
+                    countable: true,
+                    position: "top",
+                    margin: "10px",
+                    float: "right",
+                    fontsize: "0.9em",
+                    color: "rgb(90,90,90)",
+                    language: "english",
+                    localization: {
+                        words: "palavras",
+                        minute: "minutos",
+                        min: "mins",
+                    },
+                    isExpected: true,
+                },
+                name: "MBM Framework",
+                loadSidebar: true,
+                relativePath: true,
+                repo: "",
+                plugins: [
+                    function (hook, vm) {
+                        var today = new Date();
+                        var footer = [
+                            "<hr/>",
+                            "<footer>",
+                            "<div class='d-flex'>",
+                            "<span>Framework desenvolvido pela</span>",
+                            '<img height=160 src="https://mbmsolutions.com.br/wp-content/uploads/2019/06/LogoPequeno.png" />',
+                            today.getDay() % 6 ? "<span>com muito ☕.</span>" : "<span>com muita 🍺.</span>",
+                            "</div>",
+                            "</footer>",
+                        ].join("");
+                        hook.beforeEach((markdown) => {
+                            console.log({ markdown, vm });
+                            return markdown;
+                        });
+                        hook.afterEach(function (html) {
+                            return html + footer;
+                        });
+                    },
+                ],
+            };
+        </script>
+        <!-- Docsify v4 -->
+        <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+        <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-jsx.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-tsx.min.js"></script>
+    </body>
+</html>
