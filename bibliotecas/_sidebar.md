@@ -44,8 +44,8 @@
 * [**Bibliotecas**](/bibliotecas/)
   * [Cache](/bibliotecas/?id=cache)
   * [FileSystem](/bibliotecas/file-system/)
-    <!-- * [Config](/bibliotecas/file-system/?id=config) -->
+    * [Config](/bibliotecas/file-system/?id=config)
   * [Reports](/bibliotecas/reports/?id=file-system)
-    <!-- * [Email](/bibliotecas/reports/?id=email)
-    * [View](/bibliotecas/reports/?id=view) -->
+    * [Email](/bibliotecas/reports/?id=email)
+    * [View](/bibliotecas/reports/?id=view)
   * [Permissões](/bibliotecas/?id=permissões)

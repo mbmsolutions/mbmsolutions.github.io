@@ -6,14 +6,14 @@
     * [Changelog](/?id=changelog)
 * **Estrutura**
   * [Pastas](/estrutura/pastas/?id=pastas)
-    <!-- * [/App](/estrutura/pastas/?id=app)
+    * [/App](/estrutura/pastas/?id=app)
     * [/Bootstrap](/estrutura/pastas/?id=bootstrap)
     * [/Database](/estrutura/pastas/?id=database)
     * [/Library](/estrutura/pastas/?id=library)
     * [/Public](/estrutura/pastas/?id=public)
     * [/Resource](/estrutura/pastas/?id=resource)
     * [/Src](/estrutura/pastas/?id=src)
-    * [/Storage](/estrutura/pastas/?id=bootsstoragetrap) -->
+    * [/Storage](/estrutura/pastas/?id=bootsstoragetrap)
 * [**Roteamento**](/roteamento/)
   * [Groups](/roteamento/?id=groups)
   * [Middlewares](/roteamento/?id=middlewares)
@@ -23,7 +23,7 @@
   * [Tabelas](/banco-de-dados/?id=tabelas)
   * [Relacionamento](/banco-de-dados/?id=relacionamentos)
   * [Models](/banco-de-dados/?id=models)
-    <!-- * [Propriedades](/banco-de-dados/models/propriedades/)
+    * [Propriedades](/banco-de-dados/models/propriedades/)
       * [orderBy](/banco-de-dados/models/propriedades/orderBy)
       * [appends](/banco-de-dados/models/propriedades/appends)
     * [Métodos]((/banco-de-dados/models/métodos)
@@ -32,7 +32,7 @@
       * [beforeSave](/banco-de-dados/?id=beforesave-static)
       * [$beforeInsert](/banco-de-dados/?id=p-before-insert)
       * [$beforeUpdate](/banco-de-dados/?id=p-before-update)
-      * [getJsonSchema](/banco-de-dados/?id=getjsonschema-static) -->
+      * [getJsonSchema](/banco-de-dados/?id=getjsonschema-static)
   * [Schemas](/banco-de-dados/?id=schemas)
   * [DFM's](/banco-de-dados/?id=dfm39s)
 * [**Decorators**](/decorators/)
@@ -44,8 +44,8 @@
 * [**Bibliotecas**](/bibliotecas/)
   * [Cache](/bibliotecas/?id=cache)
   * [FileSystem](/bibliotecas/file-system/)
-    <!-- * [Config](/bibliotecas/file-system/?id=config) -->
+    * [Config](/bibliotecas/file-system/?id=config)
   * [Reports](/bibliotecas/reports/?id=file-system)
-    <!-- * [Email](/bibliotecas/reports/?id=email)
-    * [View](/bibliotecas/reports/?id=view) -->
+    * [Email](/bibliotecas/reports/?id=email)
+    * [View](/bibliotecas/reports/?id=view)
   * [Permissões](/bibliotecas/?id=permissões)
