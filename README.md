@@ -10,33 +10,36 @@ npm i
 yarn
 ```
 
+
 # Como introduzir alguem ao projeto
 Para a inicialização do projeto, é necessario acesso aos fontes e conhecimento nas [tecnologias](?id=tecnologias) e nos seguintes conceitos:
 - [CRUD/BREAD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD)
 - [Endpoints](https://pt.stackoverflow.com/questions/86399/qual-a-diferen%C3%A7a-entre-endpoint-e-api)
 - [RestAPI](https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api)
 - SoapAPI
-- CLEAN Code
-- Jenkins
-- SQL
+- [CLEAN Code](https://balta.io/artigos/clean-code)
+- [Jenkins](https://www.jenkins.io/doc/)
+- [SQL](https://www.alura.com.br/artigos/o-que-e-sql)
+
+Algumas sugestões de **como começar bem** no projeto, o ideal como primeira visualização do projeto, é entender [onde ficam](/roteamento/) e quais são as rotas e seus respectivos `controllers`, tanto quanto do backend como do frontend.
 
 # Tecnologias
 A Framework se constitui das seguintes tecnologias
-- Javascript
-  - TypeScript 4.5.5
-  - NextJS
-    - React
-    - NodeJS
-  - Express
-  - SocketIO
-- CSS
-  - SASS
-    - Bootstrap 5
-    - MetronicUI 8
-  - CSSInJS
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
+  - [TypeScript 4.5.5](https://www.typescriptlang.org/)
+  - NextJS 
+    - [React](https://pt-br.reactjs.org/)
+    - [NodeJS](https://nodejs.org/en/)
+  - [Express](https://expressjs.com/pt-br/)
+  - [SocketIO](https://socket.io/)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
+  - [SASS](https://sass-lang.com/)
+    - [Bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+    - [MetronicUI 8](https://preview.keenthemes.com/metronic8/demo1/documentation/getting-started.html)
+  - [CSSInJS](https://cssinjs.org/)
 - Html
-  - Handlebars `backend`
-  - React `backend/frontend`
+  - [Handlebars](https://handlebarsjs.com/) `backend`
+  - [React](https://pt-br.reactjs.org/) `backend/frontend`
 - Banco de dados
   - [PostgreSQL](https://www.postgresql.org/)
     - [Objection.JS](https://vincit.github.io/objection.js/)

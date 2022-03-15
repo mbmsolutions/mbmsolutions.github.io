@@ -4,7 +4,7 @@ As bibliotecas são consideradas `node_modules` expecificas para a nossa framewo
 
 <h4 id="cache">
 
-[Cache](/decorators/)
+[Cache](/bibliotecas/cache/)
 
 </h4>
 

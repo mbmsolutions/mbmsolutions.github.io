@@ -7,7 +7,7 @@ A Estrutura de pastas se mantem o mais fiel possivel a [Laravel](https://laravel
 
 !> É **obrigatório** que o projeto siga a seguinte estrutura de pastas:
 ```yaml
-└── raiz        
+└── .        
     ├── app     
     ├── bootstrap
     ├── config
