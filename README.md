@@ -16,7 +16,7 @@ Para a inicialização do projeto, é necessario acesso aos fontes e conheciment
 - [CRUD/BREAD](https://developer.mozilla.org/pt-BR/docs/Glossary/CRUD)
 - [Endpoints](https://pt.stackoverflow.com/questions/86399/qual-a-diferen%C3%A7a-entre-endpoint-e-api)
 - [RestAPI](https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api)
-- SoapAPI
+- [SoapAPI](https://blog.tecnospeed.com.br/rest-x-soap/)
 - [CLEAN Code](https://balta.io/artigos/clean-code)
 - [Jenkins](https://www.jenkins.io/doc/)
 - [SQL](https://www.alura.com.br/artigos/o-que-e-sql)

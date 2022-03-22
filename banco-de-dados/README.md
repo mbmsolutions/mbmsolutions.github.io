@@ -19,6 +19,16 @@ Colunas que são `foreign_key` devem possuir o seguinte formato: `${NOME_DA_TABE
 - user_fk_role_id (usuários com a referencia em funções)
 - user_fk_client_id (usuários com referencia em clientes)
 
+Caso o relacionamento seja feito em uma coluna externa de outro banco, por exemplo a coluna "cod_empresa" muito utilizada no próprio MBM Solutions, a coluna deverá seguir o formato `${NOME_DA_TABELA}_external_ref` sendo preenchida com um JSON equivalendo as tabelas e as colunas referentes. por exemplo:
+- Caso **parameters** possua uma configuração por empresa, existirá a coluna `parameters_external_ref` do tipo `jsonb` com o JSON: 
+```json
+{
+    "empresa": {
+        "cod_empresa": "0001"
+    }
+}
+```
+
 ### Relacionamentos
 A framework fornece o helper `@library/helpers/RelationBuilder` que utiliza apenas 4 parametros para montar o relacionamento em uma só linha, exemplo de formato:
 ```ts

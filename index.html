@@ -7,6 +7,7 @@
         <meta name="description" content="Description" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+        <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
         <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css" /> -->
         <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" /> -->
         <style>
@@ -49,6 +50,11 @@
         <div id="app"></div>
         <script>
             window.$docsify = {
+                alias: {
+                    "/.*/_sidebar.md": "/_sidebar.md",
+                },
+                // subMaxLevel: 3,
+                sidebarDisplayLevel: 1,
                 logo: "_media/logo.png",
                 count: {
                     countable: true,
@@ -83,17 +89,53 @@
                             "</footer>",
                         ].join("");
                         hook.beforeEach((markdown) => {
+                            let keywords = {
+                                " NextJS ": " [NextJS](https://Nextjs.org/) ",
+                                " VueJS ": " [VueJS](https://vuejs.org/) ",
+                                " ReactJS ": " [ReactJS](https://reactjs.org/) ",
+                                " NodeJS ": " [NodeJS](https://nodejs.org/) ",
+                                " ExpressJS ": " [ExpressJS](https://expressjs.com/) ",
+                                " MongoDB ": " [MongoDB](https://www.mongodb.com/) ",
+                                " MySQL ": " [MySQL](https://www.mysql.com/) ",
+                                " Redis ": " [Redis](https://redis.io/) ",
+                                " Jenkins ": " [Jenkins](https://jenkins.io/) ",
+                                " JsonSchema ": " [JsonSchema](https://json-schema.org/) ",
+                                " JsonSchemas ": " [JsonSchemas](https://json-schema.org/) ",
+                                " Laravel ": " [Laravel](https://laravel.com/) ",
+                                " MVC ": " [MVC](https://pt.wikipedia.org/wiki/MVC) ",
+                                " MBM ": " [MBM](https://mbmsolutions.com.br/) ",
+                                " SMTP ": " [SMTP](https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) ",
+                                " HTTPS ": " [HTTPS](https://pt.wikipedia.org/wiki/HTTPS) ",
+                            };
+                            let typeKeywords = ["Array","string","number","boolean","object","array","any"];
+                            for (var i in keywords) {
+                                markdown = markdown
+                                    .split(`"${i.trim()}"`)
+                                    .join(keywords[i])
+                                    .split(`**${i.trim()}**`)
+                                    .join(keywords[i])
+                                    .split(i)
+                                    .join(keywords[i]);
+                            }
+                            for(var i in typeKeywords) {
+                                let keyword = typeKeywords[i];
+                                markdown = markdown
+                                    .split(`$${keyword}`)
+                                    .join(`<span class="token number">${keyword}</span>`);
+                                // console.log(`$${i}`)
+                            }
                             return markdown
-                            .split(" Redis ").join(" [Redis](https://redis.io/) ")
-                            .split(" Jenkins ").join(" [Jenkins](https://www.jenkins.io/) ")
-                            .split(" NextJS ").join(" [NextJS](https://Nextjs.org/) ")
-                            .split(":string").join(": <span class='token number'>string</span>")
-                            .split(":any").join(": <span class='token number'>any</span>")
-                            .split(": number").join(": <span class='token number'>number</span>")
-                            .split(":ITypes").join(": <span class='token number'>ITypes</span>")
+                                .split(":string")
+                                .join(": <span class='token number'>string</span>")
+                                .split(":any")
+                                .join(": <span class='token number'>any</span>")
+                                .split(": number")
+                                .join(": <span class='token number'>number</span>")
+                                .split(":ITypes")
+                                .join(": <span class='token number'>ITypes</span>");
                         });
                         hook.afterEach(function (html) {
-                            return (html + footer).split(` words`).join(' palavras');
+                            return (html + footer).split(` words`).join(" palavras");
                         });
                     },
                 ],
@@ -108,5 +150,6 @@
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-jsx.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-tsx.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
     </body>
 </html>
