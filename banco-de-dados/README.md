@@ -29,6 +29,8 @@ Caso o relacionamento seja feito em uma coluna externa de outro banco, por exemp
 }
 ```
 
+Alem disso a utilização de JSON/JSONB é comum, pois assim dados como multiplas chaves de relacionamentos ou dados que realmente são do tipo JSON não precisam ser convertidos explicitamente em todos os lugares do sistema.
+
 ### Relacionamentos
 A framework fornece o helper `@library/helpers/RelationBuilder` que utiliza apenas 4 parametros para montar o relacionamento em uma só linha, exemplo de formato:
 ```ts
@@ -36,7 +38,7 @@ Relation(User, Client, "user_fk_client_id", "HasOneRelation"),
 ```
 
 ### Models
-As models do sistema, utilizam uma extensão customizada do [Objection.JS](https://vincit.github.io/objection.js/), sendo encontrada em `@library/database/CatModel` a model utilizada internamente e em `@library/database/LibModel` a model utilizada para o sistema MBM Business
+As models do sistema, utilizam uma extensão customizada do [Objection.JS](https://vincit.github.io/objection.js/), sendo encontrada em `@library/database/CatModel` a model utilizada internamente e em `@library/database/LibModel` a model utilizada para o sistema MBM Business, sendo as duas utilizadas com o conceito da programação ser feita nelas e nem sempre nos controllers, assim facilita bastante a "customização" de ações para coisas muito expecificas, por exemplo, após a criação de um usuário, o sistema deve enviar um email para o usuário, isso será adicionado na função `afterInsert` da model `User` sem necessidade de ser adicionado ao controller.
 
 #### Propriedades
 

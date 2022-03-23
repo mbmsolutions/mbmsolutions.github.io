@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+        <style>
+            * {
+                font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+            }
+            body {
+                padding: 1rem;
+            }
+            input {
+                width: 100%;
+                border: 1px solid #eee;
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+            input:focus {
+                outline: none;
+                border: 1px solid #ccc;
+            }
+            .card {
+                padding: 1rem;
+                border: 1px solid #eee;
+                margin-top: 1rem;
+                border-radius: 0.25rem;
+            }
+            .card {
+                margin-bottom: 1rem;
+            }
+            .markdown-section {
+                max-width: 100%;
+            }
+            .author {
+                position: absolute;
+                right: 0.5rem;
+                bottom: 0.5rem;
+                font-size: 12px;
+                opacity: 0.6;
+            }
+            body {
+                overflow: auto !important;
+            }
+        </style>
+        <base target="_blank" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="app">
+            <div ng-controller="AppController">
+                <input placeholder="Pesquisar por..." ng-model="searchInput" type="text" />
+                <div ng-repeat="(key,val) in filteredFaq track by $index" class="card markdown-section">
+                    <h3>{{val.title}}</h3>
+                    <p ng-if="val.html !== null" ng-bind-html="val.html"></p>
+                    <span class="author"> {{val.author}} </span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var app = angular.module("app", []).config(function ($sceProvider) {
+                $sceProvider.enabled(false);
+            });
+            app.controller("AppController", ($scope) => {
+                $scope.searchInput = "";
+                $scope.faq = [
+                    {
+                        title: "Como encontrar um rota",
+                        tags: ["rota", "rotas", "routing", "encontrar"],
+                        author: "Willian Matheus Carminatti",
+                        html: `
+                            <p>
+                                As rotas podem ser encontradas verificando no arquivo <code>@routes/web.ts</code>
+                            </p>
+                            `,
+                    },
+                    {
+                        title: "Como encontrar uma pagina do frontend",
+                        tags: ["frontend", "pagina", "encontrar", "page"],
+                        author: "Willian Matheus Carminatti",
+                        html: `
+                            <p>
+                                As paginas podem ser encontradas a partir da pasta <code>@src/pages/</code> conforme a utilização do NextJS
+                            </p>
+                            `,
+                    },
+                    ///Como utilizar o jenkins
+                    {
+                        title: "Como utilizar o Jenkins",
+                        tags: ["jenkins", "como", "utilizar"],
+                        author: "Willian Matheus Carminatti",
+                        html: `
+                            <p>
+                                Aqui vai um passo a passo de como subir algo no Jenkins.
+                                <ul>
+                                    <li>
+                                        Subir o projeto no Github com a branch configurada no Jenkins
+                                    </li>
+                                    <li>
+                                        Acessar o Jenkins no dominio da hospedagem com a porta :8080
+                                    </li>
+                                    <li>
+                                        Caso já existe, verificar todos os <code>jobs</code> e seleciona-lo, caso não, é necessario criar
+                                    </li>
+                                    <li>
+                                        Selecionar a opção <code>Construir agora</code>
+                                    </li>
+
+                                </ul>
+                                E ta pronto o sorvetinho! é sério, só esperar ele compilar tudo que se o job estiver configurado correto, não precisa fazer mais nada
+                            </p>
+                            `,
+                    },
+                ];
+                $scope.filteredFaq = [];
+                $scope.$watch("searchInput", () => {
+                    // if ($scope.searchInput?.length > 0) {
+                    $scope.filteredFaq = $scope.faq.filter((faq) => {
+                        return (
+                            faq.title.toLowerCase().indexOf($scope.searchInput.toLowerCase()) !== -1 ||
+                            faq.html.toLowerCase().indexOf($scope.searchInput.toLowerCase()) !== -1 ||
+                            faq.tags.some((tag) => {
+                                return tag.toLowerCase().indexOf($scope.searchInput.toLowerCase()) !== -1;
+                            })
+                        );
+                    });
+                    // } else {
+                    //     $scope.filteredFaq = [{ title: "Digite algo para filtrar", html: null }];
+                    // }
+                });
+                // $scope.a = () => {
+                //     alert("a");
+                // };
+            });
+        </script>
+    </body>
+</html>
