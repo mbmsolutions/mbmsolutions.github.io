@@ -60,3 +60,4 @@
   * [Introdução](/json-schema-editor/?id=jsonschemaeditor)
   * [Formulários](/json-schema-editor/?id=formulários)
 * [**FAQ**](/faq/)
+* <a href="/reference/index.html" title="Referencia"><strong>Referencia</strong></a>

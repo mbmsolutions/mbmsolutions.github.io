@@ -57,8 +57,9 @@ A Framework se constitui das seguintes tecnologias
 
 # Changelog
 
-| Data             | Mensagem                             | Colaborador                |
-| ---------------- | ------------------------------------ | -------------------------- |
-| 23/03/2022 14:18 | Adicionado Cron ,outras bibliotecas e FAQ | Willian Matheus Carminatti |
-| 18/05/2022 11:00 | Adicionado JsonSchemaEditor          | Willian Matheus Carminatti |
-| 14/05/2022 15:17 | Documentação criada                  | Willian Matheus Carminatti |
+| Data             | Mensagem                                     | Colaborador                |
+| ---------------- | -------------------------------------------- | -------------------------- |
+| 23/03/2022 16:35 | Adicionado paginas de referencia com TypeDoc | Willian Matheus Carminatti |
+| 23/03/2022 14:18 | Adicionado Cron ,outras bibliotecas e FAQ    | Willian Matheus Carminatti |
+| 18/05/2022 11:00 | Adicionado JsonSchemaEditor                  | Willian Matheus Carminatti |
+| 14/05/2022 15:17 | Documentação criada                          | Willian Matheus Carminatti |
