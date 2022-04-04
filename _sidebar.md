@@ -16,8 +16,9 @@
     * [/Storage](/estrutura/pastas/?id=bootsstoragetrap)
 * **Roteamento**
   * [Introdução](/roteamento/?id=roteamento)
-  * [Groups](/roteamento/?id=groups)
+  * [Basico](/roteamento/?id=basico)
   * [Middlewares](/roteamento/?id=middlewares)
+  * [Groups](/roteamento/?id=groups)
   * [Request & Response](/roteamento/?id=request-amp-response)
   * [Extensão NextJS](/roteamento/?id=extensão-nextjs)
   * [Cron](/roteamento/?id=cron)
