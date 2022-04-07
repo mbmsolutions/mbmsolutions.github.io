@@ -10,7 +10,7 @@ Para adicionar uma nova rota, deve ser implementado no arquivo `@routes/web` sen
 router.get("/", "Api/HomeController@index");
 ```
 
-Onde o caminho `/` irá executar a função `index` do arquivo `@routes/web/Api/HomeController.ts`
+Onde o caminho `/` irá executar a função `index` do arquivo `@app/http/api/HomeController.ts`
 
 ### Middlewares
 
