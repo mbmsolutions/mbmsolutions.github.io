@@ -7,6 +7,7 @@
         <meta name="description" content="Description" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+
         <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" /> -->
         <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css" /> -->
         <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css" /> -->
@@ -29,6 +30,16 @@
                 object-fit: cover;
                 width: 120px;
             }
+            /* pre {
+                background: #2b2b2b !important;
+            }
+            code {
+                background: #2b2b2b !important;
+
+
+
+                lalala
+            } */
 
             .token.keyword {
                 color: #393766;
@@ -44,9 +55,8 @@
             .sidebar {
                 padding-top: 15px;
             }
-            
         </style>
-        
+        <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-darcula.css"> -->
     </head>
     <body>
         <div id="app"></div>
@@ -56,6 +66,7 @@
                     "/.*/_sidebar.md": "/_sidebar.md",
                 },
                 // subMaxLevel: 3,
+                // themeColor: "#42b983",
                 sidebarDisplayLevel: 1,
                 logo: "_media/logo.png",
                 count: {
@@ -111,21 +122,13 @@
                                 " SMTP ": " [SMTP](https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) ",
                                 " HTTPS ": " [HTTPS](https://pt.wikipedia.org/wiki/HTTPS) ",
                             };
-                            let typeKeywords = ["Array","string","number","boolean","object","array","any"];
+                            let typeKeywords = ["Array", "string", "number", "boolean", "object", "array", "any"];
                             for (var i in keywords) {
-                                markdown = markdown
-                                    .split(`"${i.trim()}"`)
-                                    .join(keywords[i])
-                                    .split(`**${i.trim()}**`)
-                                    .join(keywords[i])
-                                    .split(i)
-                                    .join(keywords[i]);
+                                markdown = markdown.split(`"${i.trim()}"`).join(keywords[i]).split(`**${i.trim()}**`).join(keywords[i]).split(i).join(keywords[i]);
                             }
-                            for(var i in typeKeywords) {
+                            for (var i in typeKeywords) {
                                 let keyword = typeKeywords[i];
-                                markdown = markdown
-                                    .split(`$${keyword}`)
-                                    .join(`<span class="token number">${keyword}</span>`);
+                                markdown = markdown.split(`$${keyword}`).join(`<span class="token number">${keyword}</span>`);
                                 // console.log(`$${i}`)
                             }
                             return markdown
@@ -146,10 +149,10 @@
             };
         </script>
         <!-- Docsify v4 -->
-        
-        
+
         <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
         <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
